@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <img src="uploads/Capture.png" alt="" srcset=""> -->
+
+    <div class="container">
+      <h1>File upload</h1>
+      <%= typeof msg != "undefined" ? msg:" " %>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="file-field input-field">
+          <div class="btn grey">
+            <span>File</span>
+            <input name="nMyImage" type="file" />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" />
+          </div>
+
+          
+
+        </div>
+
+
+        <label for="fname">First name:</label><br>
+          <input placeholder="type here" type="text" id="fname" name="fname"><br>
+
+        <button type="submit" name="nyobutton" value="yobutton" class="btn">Post</button>
+      </form>
+      <br />
+
+      <img
+        src="<%= typeof file != 'undefined' ? file :' ' %>"
+        alt="yo"
+        srcset=""
+        class="responsive-img yo"
+        style="background-color: chartreuse"
+      />
+
+     <% if(typeof file!= 'undefined'){%>
+
+      <div
+        class="container"
+        style="display:block;width: 20rem; height: 20rem; background-image: url(<%=file%>);"
+
+
+      ></div>
+
+     <% }else{%>
+
+        <div
+        class="container"
+        style="display:none;width: 20rem; height: 20rem;"
+
+
+      ></div>
+
+
+
+
+     <%  }%>
+
+
+     <%console.log("in index");%>
+     
+
+
+     <% if(textname==="undefined"){%>
+     
+      
+      <%console.log("yo");%>
+      
+      <% }else{%>
+        <%console.log(textname);%>
+        
+        <p><%= textname%> </p>
+     
+     <% }%>
+
+           
+
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
